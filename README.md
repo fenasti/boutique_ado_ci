@@ -10,6 +10,8 @@ You can safely delete this README.md file or change it for your own project. Ple
 
 To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
 
+pip install django-allauth==0.50.0
+
 `python3 -m http.server`
 
 A blue button should appear to click: _Make Public_,
