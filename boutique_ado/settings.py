@@ -29,7 +29,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = [
     '8000-fenasti-boutiqueadoci-87ora13tbj2.ws.codeinstitute-ide.net',
-    'https://boutique-ado-feli-f4046616d9a1.herokuapp.com'
+    'boutique-ado-feli-f4046616d9a1.herokuapp.com'
 ]
 
 
