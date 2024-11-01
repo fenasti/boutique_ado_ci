@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 
 from pathlib import Path
 import os
+import dj_database_url
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -27,7 +28,8 @@ SECRET_KEY = 'django-insecure-52v102ri-)+_669v29qy8@_%q%56m_qw#5y*&7xw+(bv=7cg)o
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    '8000-fenasti-boutiqueadoci-87ora13tbj2.ws.codeinstitute-ide.net'
+    '8000-fenasti-boutiqueadoci-87ora13tbj2.ws.codeinstitute-ide.net',
+    'https://boutique-ado-feli-f4046616d9a1.herokuapp.com'
 ]
 
 
@@ -118,12 +120,28 @@ WSGI_APPLICATION = 'boutique_ado.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
+
+if 'DATABASE_URL' in os.environ:
+    DATABASES = {
+        'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
     }
-}
+else:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        }
+    }
+
+# DATABASES = {
+#      'default': dj_database_url.parse('postgres://uqvsfxbak7u:FFq5KmfumxMl@ep-gentle-mountain-a23bxz6h-pooler.eu-central-1.aws.neon.tech/pound_tint_flock_385621')
+#  }
 
 
 # Password validation
