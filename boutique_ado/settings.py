@@ -29,12 +29,11 @@ SECRET_KEY = os.environ.get('SECRET_KEY', '')
 DEBUG = 'DEVELOPMENT' in os.environ
 
 ALLOWED_HOSTS = [
-    '8000-fenasti-boutiqueadoci-87ora13tbj2.ws.codeinstitute-ide.net',
     'boutique-ado-feli-f4046616d9a1.herokuapp.com',
     'localhost',
 ]
 
-
+# '8000-fenasti-boutiqueadoci-87ora13tbj2.ws.codeinstitute-ide.net',
 # Application definition
 
 INSTALLED_APPS = [
