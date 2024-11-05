@@ -23,14 +23,13 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = os.environ.get('SECRET_KEY', '')
-#os.environ.get('SECRET_KEY', '')
-
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = [
-    'boutique-ado-feli-f4046616d9a1.herokuapp.com',
+    'boutique-ado-feli-f4046616d9a1.herokuapp.com'
+    '8000-fenasti-boutiqueadoci-87ora13tbj2.ws.codeinstitute-ide.net',
 ]
 
 # '8000-fenasti-boutiqueadoci-87ora13tbj2.ws.codeinstitute-ide.net',
